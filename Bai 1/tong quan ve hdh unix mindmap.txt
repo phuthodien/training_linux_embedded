@@ -1,0 +1,15 @@
+Gioi thieu ve khoa hoc
+Gioi thieu ve cac he dieu hanh ho Unix
+Gioi thieu ve cac chuc nang chinh cua mot de hieu hanh
+	Cau hoi pv: Trinh bay tinh nang chinh cua hdh
+Kien truc cua he dieu hanh Linux
+	Cau hoi pv: Trinh bay kien truc cua hdh Linux
+Giao dien nguoi su dung
+	Cau hoi pv: Tai sao lai can giao dien command line
+Chuong trinh va tien trinh
+	Cau hoi pv: Chuong trinh voi tien trinh khac nhau nhu the nao
+Unix la he dieu hanh da nhiem
+	Cau hoi pv: He dieu hanh da nhiem co chay dc tren he thong single core ko?
+He thong file system
+Bai tap
+Thank you

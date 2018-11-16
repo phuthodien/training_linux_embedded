@@ -1,0 +1,35 @@
+Phân loại tệp tin
+	Regular file
+		Là cái file chứa dữ liệu và tồn tại thực tế trong ổ cứng
+		Không bị mất đi khi khởi động lại hệ thống
+		Mỗi loại file sẽ có format dữ liệu riêng
+	Directory
+		Là file nằm trên ổ cứng.
+		Dữ liệu trong thư mục là tên là một số thông tin của các file nằm trong nó.
+		Không có format riêng
+	Các loại file khác
+		Meta data
+		Symbolic link
+		virtual file
+			Socket
+			Device file
+			STDIN, STDOUT, STDERR
+File descriptor
+	Là một số nguyên không âm
+	Đại diện cho index chứa con trỏ file trong file table của process
+	Index 0 cho STDIN, 1 - STDOUT, 2 - STDERR
+	Toán tử ">"?
+Cách sử dụng các hàm cơ bản tương tác với file
+	open
+	close
+	lseek
+	read
+	write
+	sync
+	Bài tập
+		Tự tạo 1 file text và đọc nó từ 1 vị trí bất kỳ, tất cả đều sử dụng C.
+		Sử dụng hàm readdir để in ra thông tin các file trong 1 folder với đường dẫn fixed trong source code. Thông tin gồm có tên, size, modify time.
+		Build 1 kernel module có sẵn hàm read/write sau đó viết 1 chương trình C để đọc file và xem kết quả
+		Dùng C để tạo ra 1 folder có cấu trúc như hình vẽ, trong đó các file có các mode khác nhau. Hiện thị những file có mode là read only.
+		Tải 1 gói software packet về máy, sau đó viết chương trình setup để cài đặt packet đó lên máy tính, viết 1 chương trình uninstall để gỡ gói packet đó đi.
+			https://drive.google.com/open?id=121QwiGUTnRdk18NoEoSDUAODxmDu5B9t
