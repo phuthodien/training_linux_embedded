@@ -1,0 +1,38 @@
+Agenda
+Introduction
+	Can extend kernel code when needed
+	Interact with kernel to become only one kernel process
+	Code instruction has same priority with kernel
+Setup environment for development
+Hardware
+	Board
+		Pi
+			Good support from community
+			Poor hardware document
+		Udoo
+			Good hardware document
+			Should use Udoo for development
+Firmware
+	Download firmware from main page
+		https://www.raspberrypi.org/downloads/raspbian/
+	Install firmware
+		Install Window's tool to write firmware for sdcard
+			https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+	Plug in sdcard, power cable, mouse, keyboard and monitor for Pi
+Connect PC with board
+	Install MobaXterm for PC
+		https://mobaxterm.mobatek.net/
+	Setup network to connect Pi with PC
+		Set static IP for Pi and PC
+	Install ssh tool for Pi
+	Create new session in MobaXterm to ssh with Pi
+Install kernel header in Pi
+	It include all source header need to develop kernel module
+	It is generate when they build kernel image
+	Each kernel instance has only one kernel header
+	sudo apt-get install raspberrypi-kernel-headers
+Create Hello world kernel module
+Source code
+Make file
+Load and test result
+Home work

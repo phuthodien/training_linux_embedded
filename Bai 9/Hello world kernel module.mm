@@ -1,0 +1,56 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1547173691220" ID="ID_908093669" MODIFIED="1547173986017" TEXT="Hello world kernel module">
+<node CREATED="1547174048355" ID="ID_1028814415" MODIFIED="1547174051185" POSITION="right" TEXT="Agenda"/>
+<node CREATED="1547174052179" ID="ID_873286914" MODIFIED="1547174058928" POSITION="right" TEXT="Introduction">
+<node CREATED="1547174073363" ID="ID_1127916406" MODIFIED="1547174289080" TEXT="Can extend kernel code when needed"/>
+<node CREATED="1547174290172" ID="ID_741431994" MODIFIED="1547174366944" TEXT="Interact with kernel to become only one kernel process"/>
+<node CREATED="1547174371507" ID="ID_1406172727" MODIFIED="1547174453291" TEXT="Code instruction has same priority with kernel"/>
+</node>
+<node CREATED="1547174503720" ID="ID_1635846368" MODIFIED="1547174537523" POSITION="right" TEXT="Setup environment for development"/>
+<node CREATED="1547174549768" ID="ID_159463538" MODIFIED="1547174919375" POSITION="right" TEXT="Hardware">
+<node CREATED="1547174556609" ID="ID_509587888" MODIFIED="1547174559919" TEXT="Board">
+<node CREATED="1547174560634" ID="ID_931935485" MODIFIED="1547174563815" TEXT="Pi">
+<node CREATED="1547174571107" ID="ID_502693729" MODIFIED="1547174599398" TEXT="Good support from community"/>
+<node CREATED="1547174599842" ID="ID_10004689" MODIFIED="1547174610137" TEXT="Poor hardware document"/>
+</node>
+<node CREATED="1547174564355" ID="ID_569507953" MODIFIED="1547174566248" TEXT="Udoo">
+<node CREATED="1547174887005" ID="ID_898873039" MODIFIED="1547174896531" TEXT="Good hardware document"/>
+<node CREATED="1547174897102" ID="ID_1418191951" MODIFIED="1547174914492" TEXT="Should use Udoo for development"/>
+</node>
+</node>
+</node>
+<node CREATED="1547174920601" ID="ID_1015266057" MODIFIED="1547174945544" POSITION="right" TEXT="Firmware">
+<node CREATED="1547174946763" ID="ID_632617372" MODIFIED="1547175277866" TEXT="Download firmware from main page">
+<node CREATED="1547175278805" ID="ID_1342554652" MODIFIED="1547175279753" TEXT="https://www.raspberrypi.org/downloads/raspbian/"/>
+</node>
+<node CREATED="1547175283541" ID="ID_878654550" MODIFIED="1547175291955" TEXT="Install firmware">
+<node CREATED="1547175292799" ID="ID_1857779706" MODIFIED="1547175314524" TEXT="Install Window&apos;s tool to write firmware for sdcard">
+<node CREATED="1547175321657" ID="ID_635902025" MODIFIED="1547175322310" TEXT="https://www.raspberrypi.org/documentation/installation/installing-images/README.md"/>
+</node>
+</node>
+<node CREATED="1547175327320" ID="ID_1172489280" MODIFIED="1547175455459" TEXT="Plug in sdcard, power cable, mouse, keyboard and monitor for Pi"/>
+</node>
+<node CREATED="1547175470195" ID="ID_979132154" MODIFIED="1547175489928" POSITION="right" TEXT="Connect PC with board">
+<node CREATED="1547175490635" ID="ID_402941750" MODIFIED="1547175521274" TEXT="Install MobaXterm for PC">
+<node CREATED="1547175515731" ID="ID_1847732167" MODIFIED="1547175517472" TEXT="https://mobaxterm.mobatek.net/"/>
+</node>
+<node CREATED="1547175522587" ID="ID_535544353" MODIFIED="1547175558688" TEXT="Setup network to connect Pi with PC">
+<node CREATED="1547175559409" ID="ID_714431900" MODIFIED="1547175589912" TEXT="Set static IP for Pi and PC"/>
+</node>
+<node CREATED="1547175597539" ID="ID_862251491" MODIFIED="1547175604304" TEXT="Install ssh tool for Pi"/>
+<node CREATED="1547175665315" ID="ID_1493606456" MODIFIED="1547176736408" TEXT="Create new session in MobaXterm to ssh with Pi"/>
+</node>
+<node CREATED="1547176747387" ID="ID_998930698" MODIFIED="1547176763286" POSITION="right" TEXT="Install kernel header in Pi">
+<node CREATED="1547176765226" ID="ID_345883484" MODIFIED="1547176797936" TEXT="It include all source header need to develop kernel module"/>
+<node CREATED="1547176808203" ID="ID_1186155520" MODIFIED="1547176828080" TEXT="It is generate when they build kernel image"/>
+<node CREATED="1547176828715" ID="ID_1918290567" MODIFIED="1547176846440" TEXT="Each kernel instance has only one kernel header"/>
+<node CREATED="1547177732817" ID="ID_1828920212" MODIFIED="1547177733416" TEXT="sudo apt-get install raspberrypi-kernel-headers"/>
+</node>
+<node CREATED="1547176961416" ID="ID_1405924154" MODIFIED="1547176973271" POSITION="right" TEXT="Create Hello world kernel module"/>
+<node CREATED="1547177048107" ID="ID_1849713272" MODIFIED="1547177054991" POSITION="right" TEXT="Source code"/>
+<node CREATED="1547177056155" ID="ID_1593621842" MODIFIED="1547177058727" POSITION="right" TEXT="Make file"/>
+<node CREATED="1547177059371" ID="ID_250676589" MODIFIED="1547177083159" POSITION="right" TEXT="Load and test result"/>
+<node CREATED="1547177086650" ID="ID_1215663641" MODIFIED="1547177091127" POSITION="right" TEXT="Home work"/>
+</node>
+</map>
