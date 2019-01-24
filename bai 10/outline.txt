@@ -1,0 +1,60 @@
+Agenda
+	Objective
+Driver main functions
+	Service user space
+	Call service from kernel space
+	Working directly with hardware
+Character device
+	Cây phân cấp device
+	Character device
+	Block device
+	Network device
+Device file
+	All device file place in /dev folder
+	Major number
+	Minor number
+	Create a device file
+		By udev
+		By mknod command
+		By device driver
+Device operation
+	open
+	close
+	read
+	write
+	ioctl
+Implement file operation in driver
+	static int dev_open(struct inode *inodep, struct file *filep)
+	static int dev_close(struct inode *inodep, struct file *filep)
+	static ssize_t dev_read(struct file*filep, char __user *buf, size_t len, loff_t *offset)
+	static ssize_t dev_write(struct file*filep, const char __user *buf, size_t len, loff_t *offset)
+	unsigned long copy_from_user(void *to, const void __user *from, unsigned long n);
+	unsigned long copy_to_user(void __user *to, const void *from, unsigned long n);
+Register file operation with kernel
+Basic steps of character driver
+	Define file operation
+	Define other interface
+	Initialize private resource
+	Create device file
+	Register file operation and other interface
+Create device file
+	void cdev_init (	struct cdev * cdev,  	const struct file_operations * fops); 
+	int cdev_add (	struct cdev * p, dev_t dev, unsigned count);
+	struct class *class_create(struct module *owner, const char *name);
+	struct device *device_create(struct class *class, struct device *parent, dev_t devt, const char *fmt,   );
+Destroy device file
+	void cdev_del(struct cdev *);
+	void device_destroy(struct class *class, dev_t devt);
+	void class_destroy (	struct class *  	cls); 
+	void unregister_chrdev_region(dev_t from, unsigned count);
+Compare create and destroy a device
+Example code
+Practice
+Ioctl
+	Driver code
+		static long dev_ioctl(struct file *filep, unsigned int cmd, unsigned long arg)
+	User space code
+		#include <sys/ioctl.h>
+		int ioctl(int fd, unsigned long request, ...);
+Example code
+Home work
