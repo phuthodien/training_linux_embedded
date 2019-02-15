@@ -1,0 +1,633 @@
+/*
+ * Copyright 2015-2016 Freescale Semiconductor, Inc.
+ * Copyright 2016-2018 NXP
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ */
+
+#include "s32v234.dtsi"
+/ {
+	model = "Freescale S32V234";
+	compatible = "fsl,s32v234-evb2016q4", "fsl,s32v234", "arm,vexpress";
+
+	chosen {
+		bootargs = "console=ttyLF0,115200";
+	};
+};
+
+&can0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_can0>;
+	status = "okay";
+};
+
+&can1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_can1>;
+	status = "okay";
+};
+
+&cse3 {
+	status = "okay";
+};
+
+&dcu0 {
+	display = <&display>;
+	status = "okay";
+
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_dcu>;
+
+	display: display@0 {
+		bits-per-pixel = <32>;
+
+		display-timings {
+			native-mode = <&timing2>;
+
+			timing0: hdmi-fhd {
+				clock-frequency = <150000000>;
+				hactive = <1920>;
+				vactive = <1080>;
+				vback-porch = <36>;
+				vfront-porch = <4>;
+				hback-porch = <148>;
+				hfront-porch = <88>;
+				hsync-len = <45>;
+				vsync-len = <16>;
+			};
+
+			timing1: hdmi-wuxga {
+				clock-frequency = <150000000>;
+				hactive = <1920>;
+				vactive = <1200>;
+				vback-porch = <40>;
+				vfront-porch = <5>;
+				hback-porch = <65>;
+				hfront-porch = <13>;
+				hsync-len = <2>;
+				vsync-len = <5>;
+			};
+
+			timing2: hdmi-ntsc {
+				clock-frequency = <25000000>;
+				hactive = <720>;
+				vactive = <480>;
+				vback-porch = <10>;
+				vfront-porch = <1>;
+				hback-porch = <85>;
+				hfront-porch = <17>;
+				hsync-len = <21>;
+				vsync-len = <3>;
+			};
+
+			timing3: hdmi-pal {
+				clock-frequency = <50000000>;
+				hactive = <720>;
+				vactive = <576>;
+				vback-porch = <83>;
+				vfront-porch = <21>;
+				hback-porch = <385>;
+				hfront-porch = <24>;
+				hsync-len = <91>;
+				vsync-len = <3>;
+			};
+
+			timing4: hdmi-vga {
+				clock-frequency = <25000000>;
+				hactive = <640>;
+				vactive = <480>;
+				vback-porch = <33>;
+				vfront-porch = <9>;
+				hback-porch = <48>;
+				hfront-porch = <16>;
+				hsync-len = <91>;
+				vsync-len = <2>;
+			};
+
+			timing5: hdmi-wxga {
+				clock-frequency = <75000000>;
+				hactive = <1280>;
+				vactive = <720>;
+				vback-porch = <20>;
+				vfront-porch = <5>;
+				hback-porch = <220>;
+				hfront-porch = <110>;
+				hsync-len = <37>;
+				vsync-len = <14>;
+			};
+
+			timing6: hdmi-xga {
+				clock-frequency = <75000000>;
+				hactive = <1024>;
+				vactive = <768>;
+				vback-porch = <49>;
+				vfront-porch = <10>;
+				hback-porch = <272>;
+				hfront-porch = <69>;
+				hsync-len = <136>;
+				vsync-len = <6>;
+			};
+
+			timing7: lvds-fhd {
+				clock-frequency = <150000000>;
+				hactive = <1920>;
+				vactive = <1080>;
+				vback-porch = <36>;
+				vfront-porch = <4>;
+				hback-porch = <148>;
+				hfront-porch = <88>;
+				hsync-len = <45>;
+				vsync-len = <16>;
+			};
+		};
+	};
+};
+
+&edma {
+	status = "okay";
+};
+
+&fdma {
+	status = "okay";
+};
+
+&fec {
+	status = "okay";
+};
+
+&gpioeirq {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_gpioeirq>;
+	status = "okay";
+};
+
+&gpioother {
+	status = "okay";
+};
+
+&h264decoder {
+	status = "okay";
+};
+
+&h264_encoder {
+	status = "okay";
+};
+
+&i2c0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_i2c0>;
+	status = "okay";
+};
+
+&i2c1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_i2c1>;
+	status = "okay";
+
+	hdmi: sii9022a@39 {
+		compatible = "fsl,sii902x";
+		reg = <0x39>;
+	};
+};
+
+&i2c2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_i2c2>;
+	status = "okay";
+};
+
+&jpegdecoder {
+	status = "okay";
+};
+
+&mipicsi0 {
+	status = "okay";
+};
+
+&mipicsi1 {
+	status = "okay";
+};
+
+&pit0 {
+	status = "okay";
+};
+
+&pit1 {
+	status = "okay";
+};
+
+&pcie {
+	status = "okay";
+};
+
+&pinctrl {
+	status = "okay";
+
+	s32v234-evb {
+
+		pinctrl_can0: can0grp {
+			fsl,pins = <
+				S32V234_PAD_PA2__CAN_FD0_TXD
+				S32V234_PAD_PA3__CAN_FD0_RXD_OUT
+				S32V234_PAD_PA3__CAN_FD0_RXD_IN
+			>;
+		};
+
+		pinctrl_can1: can1grp {
+			fsl,pins = <
+				S32V234_PAD_PA4__CAN_FD1_TXD
+				S32V234_PAD_PA5__CAN_FD1_RXD_OUT
+				S32V234_PAD_PA5__CAN_FD1_RXD_IN
+			>;
+		};
+
+		pinctrl_dspi0: dspi0grp {
+			fsl,pins = <
+				S32V234_PAD_PB8__SPI0_CS0_OUT
+				S32V234_PAD_PC0__SPI0_CS4_OUT
+				S32V234_PAD_PC1__SPI0_CS5_OUT
+				S32V234_PAD_PC2__SPI0_CS6_OUT
+				S32V234_PAD_PC3__SPI0_CS7_OUT
+				S32V234_PAD_PB6__SPI0_SOUT_OUT
+				S32V234_PAD_PB5__SPI0_SCK_OUT
+				S32V234_PAD_PB7__SPI0_SIN_OUT
+				S32V234_PAD_PB7__SPI0_SIN_IN
+			>;
+		};
+
+		pinctrl_enet: enetgrp {
+			fsl,pins = <
+				S32V234_PAD_PC13__MDC
+				S32V234_PAD_PC14__MDIO_OUT
+				S32v234_PAD_PC14__MDIO_IN
+				S32V234_PAD_PC15__TXCLK_OUT
+				S32V234_PAD_PC15__TXCLK_IN
+				S32V234_PAD_PD0__RXCLK_OUT
+				S32V234_PAD_PD0__RXCLK_IN
+				S32V234_PAD_PD1__RX_D0_OUT
+				S32V234_PAD_PD1__RX_D0_IN
+				S32V234_PAD_PD2__RX_D1_OUT
+				S32V234_PAD_PD2__RX_D1_IN
+				S32V234_PAD_PD3__RX_D2_OUT
+				S32V234_PAD_PD3__RX_D2_IN
+				S32V234_PAD_PD4__RX_D3_OUT
+				S32V234_PAD_PD4__RX_D3_IN
+				S32V234_PAD_PD4__RX_DV_OUT
+				S32V234_PAD_PD4__RX_DV_IN
+				S32V234_PAD_PD7__TX_D0_OUT
+				S32V234_PAD_PD8__TX_D1_OUT
+				S32V234_PAD_PD9__TX_D2_OUT
+				S32V234_PAD_PD10__TX_D3_OUT
+				S32V234_PAD_PD11__TX_EN_OUT
+			>;
+		};
+
+		pinctrl_gpio: gpiogrp {
+			fsl,pins = <
+				S32V234_PAD_PA0__SIUL_GPIO0
+				S32V234_PAD_PA1__SIUL_GPIO1
+				S32V234_PAD_PA2__SIUL_GPIO2
+				S32V234_PAD_PA3__SIUL_GPIO3
+				S32V234_PAD_PA4__SIUL_GPIO4
+				S32V234_PAD_PA5__SIUL_GPIO5
+				S32V234_PAD_PA6__SIUL_GPIO6
+				S32V234_PAD_PA7__SIUL_GPIO7
+				S32V234_PAD_PA8__SIUL_GPIO8
+				S32V234_PAD_PA9__SIUL_GPIO9
+				S32V234_PAD_PA10__SIUL_GPIO10
+				S32V234_PAD_PA11__SIUL_GPIO11
+				S32V234_PAD_PA12__SIUL_GPIO12
+				S32V234_PAD_PA13__SIUL_GPIO13
+				S32V234_PAD_PA14__SIUL_GPIO14
+				S32V234_PAD_PA15__SIUL_GPIO15
+				S32V234_PAD_PB0__SIUL_GPIO16
+				S32V234_PAD_PB1__SIUL_GPIO17
+				S32V234_PAD_PB2__SIUL_GPIO18
+				S32V234_PAD_PB3__SIUL_GPIO19
+				S32V234_PAD_PB4__SIUL_GPIO20
+				S32V234_PAD_PB5__SIUL_GPIO21
+				S32V234_PAD_PB6__SIUL_GPIO22
+				S32V234_PAD_PB7__SIUL_GPIO23
+				S32V234_PAD_PB8__SIUL_GPIO24
+				S32V234_PAD_PB9__SIUL_GPIO25
+				S32V234_PAD_PB10__SIUL_GPIO26
+				S32V234_PAD_PB11__SIUL_GPIO27
+				S32V234_PAD_PB12__SIUL_GPIO28
+				S32V234_PAD_PB13__SIUL_GPIO29
+				S32V234_PAD_PB14__SIUL_GPIO30
+				S32V234_PAD_PB15__SIUL_GPIO31
+				S32V234_PAD_PC0__SIUL_GPIO32
+				S32V234_PAD_PC1__SIUL_GPIO33
+				S32V234_PAD_PC2__SIUL_GPIO34
+				S32V234_PAD_PC3__SIUL_GPIO35
+				S32V234_PAD_PC4__SIUL_GPIO36
+				S32V234_PAD_PC5__SIUL_GPIO37
+				S32V234_PAD_PC6__SIUL_GPIO38
+				S32V234_PAD_PC7__SIUL_GPIO39
+				S32V234_PAD_PC8__SIUL_GPIO40
+				S32V234_PAD_PC9__SIUL_GPIO41
+				S32V234_PAD_PC10__SIUL_GPIO42
+				S32V234_PAD_PC11__SIUL_GPIO43
+				S32V234_PAD_PC12__SIUL_GPIO44
+				S32V234_PAD_PC13__SIUL_GPIO45
+				S32V234_PAD_PC14__SIUL_GPIO46
+				S32V234_PAD_PC15__SIUL_GPIO47
+				S32V234_PAD_PD0__SIUL_GPIO48
+				S32V234_PAD_PD1__SIUL_GPIO49
+				S32V234_PAD_PD2__SIUL_GPIO50
+				S32V234_PAD_PD3__SIUL_GPIO51
+				S32V234_PAD_PD4__SIUL_GPIO52
+				S32V234_PAD_PD5__SIUL_GPIO53
+				S32V234_PAD_PD6__SIUL_GPIO54
+				S32V234_PAD_PD7__SIUL_GPIO55
+				S32V234_PAD_PD8__SIUL_GPIO56
+				S32V234_PAD_PD9__SIUL_GPIO57
+				S32V234_PAD_PD10__SIUL_GPIO58
+				S32V234_PAD_PD11__SIUL_GPIO59
+				S32V234_PAD_PD12__SIUL_GPIO60
+				S32V234_PAD_PD13__SIUL_GPIO61
+				S32V234_PAD_PD14__SIUL_GPIO62
+				S32V234_PAD_PD15__SIUL_GPIO63
+				S32V234_PAD_PE0__SIUL_GPIO64
+				S32V234_PAD_PE1__SIUL_GPIO65
+				S32V234_PAD_PE2__SIUL_GPIO66
+				S32V234_PAD_PE3__SIUL_GPIO67
+				S32V234_PAD_PE4__SIUL_GPIO68
+				S32V234_PAD_PE5__SIUL_GPIO69
+				S32V234_PAD_PE6__SIUL_GPIO70
+				S32V234_PAD_PE7__SIUL_GPIO71
+				S32V234_PAD_PE8__SIUL_GPIO72
+				S32V234_PAD_PE9__SIUL_GPIO73
+				S32V234_PAD_PE10__SIUL_GPIO74
+				S32V234_PAD_PE11__SIUL_GPIO75
+				S32V234_PAD_PE12__SIUL_GPIO76
+				S32V234_PAD_PE13__SIUL_GPIO77
+				S32V234_PAD_PE14__SIUL_GPIO78
+				S32V234_PAD_PE15__SIUL_GPIO79
+				S32V234_PAD_PF0__SIUL_GPIO80
+				S32V234_PAD_PF1__SIUL_GPIO81
+				S32V234_PAD_PF2__SIUL_GPIO82
+				S32V234_PAD_PF3__SIUL_GPIO83
+				S32V234_PAD_PF4__SIUL_GPIO84
+				S32V234_PAD_PF5__SIUL_GPIO85
+				S32V234_PAD_PF6__SIUL_GPIO86
+				S32V234_PAD_PF7__SIUL_GPIO87
+				S32V234_PAD_PF8__SIUL_GPIO88
+				S32V234_PAD_PF9__SIUL_GPIO89
+				S32V234_PAD_PF10__SIUL_GPIO90
+				S32V234_PAD_PF11__SIUL_GPIO91
+				S32V234_PAD_PF12__SIUL_GPIO92
+				S32V234_PAD_PF13__SIUL_GPIO93
+				S32V234_PAD_PF14__SIUL_GPIO94
+				S32V234_PAD_PF15__SIUL_GPIO95
+				S32V234_PAD_PG0__SIUL_GPIO96
+				S32V234_PAD_PG1__SIUL_GPIO97
+				S32V234_PAD_PG2__SIUL_GPIO98
+				S32V234_PAD_PG3__SIUL_GPIO99
+				S32V234_PAD_PG4__SIUL_GPIO100
+				S32V234_PAD_PG5__SIUL_GPIO101
+				S32V234_PAD_PG6__SIUL_GPIO102
+				S32V234_PAD_PG7__SIUL_GPIO103
+				S32V234_PAD_PG8__SIUL_GPIO104
+				S32V234_PAD_PG9__SIUL_GPIO105
+				S32V234_PAD_PG10__SIUL_GPIO106
+				S32V234_PAD_PG11__SIUL_GPIO107
+				S32V234_PAD_PG12__SIUL_GPIO108
+				S32V234_PAD_PG13__SIUL_GPIO109
+				S32V234_PAD_PG14__SIUL_GPIO110
+				S32V234_PAD_PG15__SIUL_GPIO111
+				S32V234_PAD_PH0__SIUL_GPIO112
+				S32V234_PAD_PH1__SIUL_GPIO113
+				S32V234_PAD_PH2__SIUL_GPIO114
+				S32V234_PAD_PH3__SIUL_GPIO115
+				S32V234_PAD_PH4__SIUL_GPIO116
+				S32V234_PAD_PH5__SIUL_GPIO117
+				S32V234_PAD_PH6__SIUL_GPIO118
+				S32V234_PAD_PH7__SIUL_GPIO119
+				S32V234_PAD_PH8__SIUL_GPIO120
+				S32V234_PAD_PH9__SIUL_GPIO121
+				S32V234_PAD_PH10__SIUL_GPIO122
+				S32V234_PAD_PH11__SIUL_GPIO123
+				S32V234_PAD_PH12__SIUL_GPIO124
+				S32V234_PAD_PH13__SIUL_GPIO125
+				S32V234_PAD_PH14__SIUL_GPIO126
+				S32V234_PAD_PH15__SIUL_GPIO127
+				S32V234_PAD_PJ0__SIUL_GPIO128
+				S32V234_PAD_PJ1__SIUL_GPIO129
+				S32V234_PAD_PJ2__SIUL_GPIO130
+				S32V234_PAD_PJ3__SIUL_GPIO131
+				S32V234_PAD_PJ4__SIUL_GPIO132
+				S32V234_PAD_PJ5__SIUL_GPIO133
+				S32V234_PAD_PJ6__SIUL_GPIO134
+				S32V234_PAD_PJ7__SIUL_GPIO135
+				S32V234_PAD_PJ8__SIUL_GPIO136
+				S32V234_PAD_PJ9__SIUL_GPIO137
+				S32V234_PAD_PJ10__SIUL_GPIO138
+				S32V234_PAD_PJ11__SIUL_GPIO139
+				S32V234_PAD_PJ12__SIUL_GPIO140
+				S32V234_PAD_PJ13__SIUL_GPIO141
+				S32V234_PAD_PJ14__SIUL_GPIO142
+				S32V234_PAD_PJ15__SIUL_GPIO143
+				S32V234_PAD_PK0__SIUL_GPIO144
+				S32V234_PAD_PK1__SIUL_GPIO145
+				S32V234_PAD_PK2__SIUL_GPIO146
+				S32V234_PAD_PK3__SIUL_GPIO147
+				S32V234_PAD_PK4__SIUL_GPIO148
+				S32V234_PAD_PK5__SIUL_GPIO149
+				S32V234_PAD_PK6__SIUL_GPIO150
+				S32V234_PAD_PK7__SIUL_GPIO151
+				S32V234_PAD_PK8__SIUL_GPIO152
+				S32V234_PAD_PK9__SIUL_GPIO153
+				S32V234_PAD_PK10__SIUL_GPIO154
+				S32V234_PAD_PK11__SIUL_GPIO155
+				S32V234_PAD_PK12__SIUL_GPIO156
+				S32V234_PAD_PK13__SIUL_GPIO157
+				S32V234_PAD_PK14__SIUL_GPIO158
+				S32V234_PAD_PK15__SIUL_GPIO159
+				S32V234_PAD_PL0__SIUL_GPIO160
+				S32V234_PAD_PL1__SIUL_GPIO161
+				S32V234_PAD_PL2__SIUL_GPIO162
+				>;
+		};
+
+		pinctrl_gpioeirq: gpioeirqgrp {
+			fsl,pins = <
+				S32V234_PAD_PA0__SIUL_EIRQ0
+				S32V234_PAD_PA1__SIUL_EIRQ1
+				S32V234_PAD_PA2__SIUL_EIRQ2
+				S32V234_PAD_PA3__SIUL_EIRQ3
+				S32V234_PAD_PA4__SIUL_EIRQ4
+				S32V234_PAD_PA5__SIUL_EIRQ5
+				S32V234_PAD_PA6__SIUL_EIRQ6
+				S32V234_PAD_PA7__SIUL_EIRQ7
+				S32V234_PAD_PA8__SIUL_EIRQ8
+				S32V234_PAD_PA9__SIUL_EIRQ9
+				S32V234_PAD_PA10__SIUL_EIRQ10
+				S32V234_PAD_PA11__SIUL_EIRQ11
+				S32V234_PAD_PA12__SIUL_EIRQ12
+				S32V234_PAD_PA13__SIUL_EIRQ13
+				S32V234_PAD_PA14__SIUL_EIRQ14
+				S32V234_PAD_PA15__SIUL_EIRQ15
+				S32V234_PAD_PB0__SIUL_EIRQ16
+				S32V234_PAD_PB1__SIUL_EIRQ17
+				S32V234_PAD_PB2__SIUL_EIRQ18
+				S32V234_PAD_PB3__SIUL_EIRQ19
+				S32V234_PAD_PB4__SIUL_EIRQ20
+				S32V234_PAD_PB5__SIUL_EIRQ21
+				S32V234_PAD_PB6__SIUL_EIRQ22
+				S32V234_PAD_PB7__SIUL_EIRQ23
+				S32V234_PAD_PB8__SIUL_EIRQ24
+				S32V234_PAD_PB9__SIUL_EIRQ25
+				S32V234_PAD_PB10__SIUL_EIRQ26
+				S32V234_PAD_PB11__SIUL_EIRQ27
+				S32V234_PAD_PB12__SIUL_EIRQ28
+				S32V234_PAD_PB13__SIUL_EIRQ29
+				S32V234_PAD_PB14__SIUL_EIRQ30
+				S32V234_PAD_PB15__SIUL_EIRQ31
+			>;
+		};
+
+		pinctrl_i2c0: i2c0grp {
+			fsl,pins = <
+				S32V234_PAD_PG3__I2C0_DATA_OUT
+				S32V234_PAD_PG3__I2C0_DATA_IN
+				S32V234_PAD_PG4__I2C0_SCLK_OUT
+				S32V234_PAD_PG4__I2C0_SCLK_IN
+			>;
+		};
+
+		pinctrl_i2c1: i2c1grp {
+			fsl,pins = <
+				S32V234_PAD_PG5__I2C1_DATA_OUT
+				S32V234_PAD_PG5__I2C1_DATA_IN
+				S32V234_PAD_PG6__I2C1_SCLK_OUT
+				S32V234_PAD_PG6__I2C1_SCLK_IN
+			>;
+		};
+
+		pinctrl_i2c2: i2c2grp {
+			fsl,pins = <
+				S32V234_PAD_PB3__I2C2_DATA_OUT
+				S32V234_PAD_PB3__I2C2_DATA_IN
+				S32V234_PAD_PB4__I2C2_SCLK_OUT
+				S32V234_PAD_PB4__I2C2_SCLK_IN
+			>;
+		};
+
+		pinctrl_uart0: uart0grp {
+			fsl,pins = <
+				S32V234_PAD_PA12__UART0_TXD_OUT
+				S32V234_PAD_PA11__UART0_RXD_IN
+			>;
+		};
+
+		pinctrl_uart1: uart1grp {
+			fsl,pins = <
+				S32V234_PAD_PA14__UART1_TXD_OUT
+				S32V234_PAD_PA13__UART1_RXD_IN
+			>;
+		};
+
+		pinctrl_usdhc0: usdhc0grp {
+			fsl,pins = <
+				S32V234_PAD_PK6__USDHC_CLK_OUT
+				S32V234_PAD_PK6__USDHC_CLK_IN
+				S32V234_PAD_PK7__USDHC_CMD_OUT
+				S32V234_PAD_PK7__USDHC_CMD_IN
+				S32V234_PAD_PK8__USDHC_DAT0_OUT
+				S32V234_PAD_PK8__USDHC_DAT0_IN
+				S32V234_PAD_PK9__USDHC_DAT1_OUT
+				S32V234_PAD_PK9__USDHC_DAT1_IN
+				S32V234_PAD_PK10__USDHC_DAT2_OUT
+				S32V234_PAD_PK10__USDHC_DAT2_IN
+				S32V234_PAD_PK11__USDHC_DAT3_OUT
+				S32V234_PAD_PK11__USDHC_DAT3_IN
+				S32V234_PAD_PK15__USDHC_DAT4_OUT
+				S32V234_PAD_PK15__USDHC_DAT4_IN
+				S32V234_PAD_PL0__USDHC_DAT5_OUT
+				S32V234_PAD_PL0__USDHC_DAT5_IN
+				S32V234_PAD_PL1__USDHC_DAT6_OUT
+				S32V234_PAD_PL1__USDHC_DAT6_IN
+				S32V234_PAD_PL2__USDHC_DAT7_OUT
+				S32V234_PAD_PL2__USDHC_DAT7_IN
+			>;
+		};
+
+	};
+};
+
+&spi0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_dspi0>;
+	status = "okay";
+
+	tja1145_0: spidev@6 {
+		compatible = "spidev";
+		spi-max-frequency = <4000000>;
+		reg = <6>;
+	};
+
+	tja1145_1: spidev@7 {
+		compatible = "spidev";
+		spi-max-frequency = <4000000>;
+		reg = <7>;
+	};
+};
+
+&tmu {
+	status = "okay";
+};
+
+&stm0 {
+	status = "okay";
+};
+
+&stm1 {
+	status = "okay";
+};
+
+&swt0 {
+	status = "okay";
+};
+
+&swt1 {
+	status = "okay";
+};
+
+&swt2 {
+	status = "okay";
+};
+
+&swt3 {
+	status = "okay";
+};
+
+&fccu {
+	status = "okay";
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart0>;
+	status = "okay";
+};
+
+&uart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_uart1>;
+	status = "okay";
+};
+
+&usdhc0 {
+	no-1-8-V;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_usdhc0>;
+	status = "okay";
+};
+
+&vseq {
+	status = "okay";
+};
