@@ -1,0 +1,15 @@
+description :
+	you write a program install(and uninstall) for a package  
+sequense program :
+
+	1. Go Make de build source code
+	2. Chuong trinh setup phai lam nhung viec sau:
+	    2.1 Tao 1 file text voi duong dan /etc/foo.conf
+	    2.2 Copy libfoo.so vao thu muc /usr/bin
+	    2.3 Copy file test vao thu muc bin
+	3. Cd vao thu muc khac va go lenh "test" de kiem tra ket qua
+
+how to run ?
+	1. "make all"
+	2. sudo cp libfoo.so /usr/bin
+	2. "./test1"
