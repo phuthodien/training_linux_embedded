@@ -1,0 +1,33 @@
+Agenda
+	CAN network
+	The CAN hardware module
+	CAN protocol in user-space
+	CAN driver
+Introduction
+	Được develop bởi BOSH. Có đặc điểm dễ implement về hardware và software, truyền ổn định, tốc độ thấp, khoảng cách ngắn. Do đó phù hợp cho việc truyền tín hiệu giữa các thiết bị trong ô tô.
+CAN network
+	Kết nối ngang hàng, mỗi thiết bị trong mạng đóng vai trò là một master. Các thiết bị tự gửi và nhận dữ liệu mà không phải chịu sự quản lý. Mỗi node trong mạng sẽ có một ID, bản tin được gửi đi sẽ kèm ID và được gửi tới tất cả các node. Các node sẽ tự quyết định có đọc bản tin đó hay không.
+Standard CAN frame
+	SOF, Identifier, RTR, IDE, r0, DLC, Data, CRC, ACK, EOF, IFS
+	Extended CAN, Mcan, CAN FD, flex CAN
+Message types
+	The data frame
+	The remote frame
+	The overload frame
+	Valid frame
+	Error Checking and Fault Confinement
+The CAN bus
+The CAN hardware module
+Transmit process
+	Write CAN frame to transmit maile box
+	Set mail box status is ready to transmit
+	Setting interrupt when transmit success
+Receive process
+	Write ID word
+	Active received mail box
+	Raise received packet interrupt
+	Send ack
+CAN protocol in user-space
+	CAN interface
+	Read, write CAN packet with socket
+CAN driver
