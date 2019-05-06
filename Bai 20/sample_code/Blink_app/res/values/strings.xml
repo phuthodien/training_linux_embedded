@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+       <string name="app_name">Blink Led</string>
+       <string name="ledOn">ledOn</string>
+       <string name="ledOff">ledOff</string>
+    </resources>

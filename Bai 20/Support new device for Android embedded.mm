@@ -1,0 +1,40 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1555404945547" ID="ID_121719460" MODIFIED="1555404983264" TEXT="Support new device for Android embedded">
+<node CREATED="1555405047878" ID="ID_1545122338" MODIFIED="1555405055162" POSITION="right" TEXT="Introduction">
+<node CREATED="1555405056229" ID="ID_1644934117" MODIFIED="1555405154620" TEXT="C&#xe1;c h&#x1ec7; th&#x1ed1;ng embedded ng&#xe0;y c&#xe0;ng &#x111;&#xf2;i h&#x1ecf;i giao di&#x1ec7;n &#x111;&#x1eb9;p h&#x1a1;n. Ngo&#xe0;i ra ch&#xfa;ng c&#xf2;n ph&#x1ee5;c v&#x1ee5; c&#xe1;c nhu c&#x1ea7;u gi&#x1ea3;i tr&#xed; cho user nh&#x1b0; ch&#x1a1;i game, xem phim. T&#x1eeb; &#x111;&#xf3; n&#x1ea3;y sinh y&#xea;u c&#x1ea7;u ph&#xe1;t tri&#x1ec3;n c&#xe1;c h&#x1ec7; th&#x1ed1;ng embedded s&#x1eed; d&#x1ee5;ng h&#x1ec7; &#x111;i&#x1ec1;u h&#xe0;nh Android."/>
+</node>
+<node CREATED="1555405160989" ID="ID_1559800366" MODIFIED="1555409945418" POSITION="right" TEXT="Android basic architecture">
+<node CREATED="1555409318732" ID="ID_398364438" MODIFIED="1555409322648" TEXT="Linux kernel"/>
+<node CREATED="1555409323059" ID="ID_1835978562" MODIFIED="1555409328265" TEXT="Linux root file system"/>
+<node CREATED="1555409328805" ID="ID_201421247" MODIFIED="1555409333601" TEXT="Android runtime"/>
+<node CREATED="1555409334468" ID="ID_1075467824" MODIFIED="1555409343010" TEXT="Android application framework"/>
+<node CREATED="1555409344190" ID="ID_1430300806" MODIFIED="1555409347659" TEXT="Android application"/>
+</node>
+<node CREATED="1555409536417" ID="ID_639988446" MODIFIED="1555483770325" POSITION="right" TEXT="Android detail architecture">
+<node CREATED="1555483372670" ID="ID_865148593" MODIFIED="1555483395092" TEXT="Android application"/>
+<node CREATED="1555483447257" ID="ID_1011299558" MODIFIED="1555483608106" TEXT="Android application API"/>
+<node CREATED="1555483616105" ID="ID_960585354" MODIFIED="1555483618853" TEXT="Binder"/>
+<node CREATED="1555483619968" ID="ID_1898387396" MODIFIED="1555483635365" TEXT="System services"/>
+<node CREATED="1555483636625" ID="ID_1163487676" MODIFIED="1555483661911" TEXT="Dalvik/Android runtime/Zygote"/>
+<node CREATED="1555483669202" ID="ID_463504496" MODIFIED="1555483840845" TEXT="Jni - Java native interface"/>
+<node CREATED="1555483679169" ID="ID_1577231427" MODIFIED="1555483859670" TEXT="HAL - Hardware abstraction layer"/>
+<node CREATED="1555483692434" ID="ID_1444555888" MODIFIED="1555483707193" TEXT="Linux kernel"/>
+</node>
+<node CREATED="1555483771306" ID="ID_43843292" MODIFIED="1555483778556" POSITION="right" TEXT="Linux kernel - device driver"/>
+<node CREATED="1555484035458" ID="ID_1202831493" MODIFIED="1555484045613" POSITION="right" TEXT="Device driver example"/>
+<node CREATED="1555483781130" ID="ID_1759659236" MODIFIED="1555483802923" POSITION="right" TEXT="HAL - Hardware abstraction layer"/>
+<node CREATED="1555484049137" ID="ID_422568790" MODIFIED="1555484053485" POSITION="right" TEXT="HAL example"/>
+<node CREATED="1555483912840" ID="ID_56759418" MODIFIED="1555483922053" POSITION="right" TEXT="Android application"/>
+<node CREATED="1555484055728" ID="ID_30069418" MODIFIED="1555484060381" POSITION="right" TEXT="Application example"/>
+<node CREATED="1555483926240" ID="ID_1263062209" MODIFIED="1555483931189" POSITION="right" TEXT="Android application API"/>
+<node CREATED="1555483931784" ID="ID_1261704141" MODIFIED="1555483936301" POSITION="right" TEXT="Binder"/>
+<node CREATED="1555483942856" ID="ID_618946873" MODIFIED="1555483945037" POSITION="right" TEXT="System services"/>
+<node CREATED="1555484084785" ID="ID_1685610417" MODIFIED="1555484211694" POSITION="right" TEXT="An service example"/>
+<node CREATED="1555483951153" ID="ID_1671342195" MODIFIED="1555483951557" POSITION="right" TEXT="Dalvik/Android runtime/Zygote"/>
+<node CREATED="1555483805360" ID="ID_999390594" MODIFIED="1555483835821" POSITION="right" TEXT="Jni - Java native interface"/>
+<node CREATED="1555484218944" ID="ID_142112038" MODIFIED="1555484225093" POSITION="right" TEXT="An jni example"/>
+<node CREATED="1555484253840" ID="ID_781321982" MODIFIED="1555484264221" POSITION="right" TEXT="Edit Android build system"/>
+<node CREATED="1555484310672" ID="ID_1509197157" MODIFIED="1555484334885" POSITION="right" TEXT="Blink led demo for Android"/>
+</node>
+</map>
