@@ -1,0 +1,15 @@
+Một ví dụ về sự cần thiết của virtual memory
+Page frame
+	Page Descriptors
+Virtual and physical memory mapping
+	Process page table
+	Virtual address, logical address, physical address
+Page fault exception
+Memory access in virtual mode and protected mode
+Cached memory
+	Some use cases need to prevent cached memory
+Memory allocator
+	Non continuous allocator
+		Lazy allocate
+	Slab allocator
+Memory cleanup
